@@ -194,7 +194,7 @@ back to the "Native Endianness" of our CPU. This is done by using the helper
 `__bpf_constant_htons` :
 
 ```
-if (ethhdr.h_proto == __bpf_constant_htons(ETH_P_IP) {
+if (ethhdr.h_proto == __bpf_constant_htons(ETH_P_IP)) {
     ...
 }
 ```
