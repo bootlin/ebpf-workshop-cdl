@@ -11,6 +11,27 @@ running a reasonably recent Linux distribution. We suggest to use Ubuntu
   to write userspace parts
 - `bpftool` to be able to manipulate eBPF programs
 
+Some distributions versions, despite providing the needed packages, have
+broken binaries, that's for example the case with bpftool on Ubuntu 24.04,
+which is only a wrapper script failing to find the relevant binary.
+You can check if you have the issue on your machine by running:
+
+```sh
+$ bpftool version
+```
+
+If you get an error related to bpftool not being found for your kernel
+version, you then need to manually compile bpftool for your host.
+Fortunately, this is pretty straightforward:
+
+```sh
+$ git clone recurse-submodules https://github.com/libbpf/bpftool.git
+$ cd bpftool/src
+$ make -j$(nproc)
+$ sudo make install
+$ export PATH=/usr/local/sbin:$PATH
+```
+
 ## Using the provided Virtual Machine
 
 If you are not able to upgrade your machine to get a recent enough
