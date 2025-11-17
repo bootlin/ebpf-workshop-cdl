@@ -1,3 +1,8 @@
+> [!NOTE]
+> This is neither a correct nor an efficient way to perform DNS blocking. This
+> is merely an excuse to learn about eBPF and how to parse a packet, in a fun
+> and easy to test fashion. Enjoy :)
+
 # Setup
 
 ## Requirements
