@@ -447,7 +447,7 @@ Let's test it by filtering one single domain :
         return TC_ACT_SHOT;
 ```
 
-Load your program, try to reach www.google.fr and see if this works :)
+Load your program, try to reach www.google.com and see if this works :)
 
 [Solution](correction/06_dns_query)
 
