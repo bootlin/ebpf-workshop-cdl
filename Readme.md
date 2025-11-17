@@ -364,7 +364,7 @@ You can use the following function to parse the domain :
 static int parse_query(struct __sk_buff *skb, unsigned int offset, char *query, int max_len)
 {
 	unsigned int pos = 1;
-	int ret, i;
+	int ret;
 	char c;
 
 	if (!skb || !query || max_len <= 0 || max_len > 253)
@@ -439,7 +439,7 @@ static int __strncmp(const void *m1, const void *m2, unsigned int len)
 Let's test it by filtering one single domain :
 
 ```
-    const char *deny = "www.google.com";
+    const char deny[] = "www.google.com";
 
     /* ... */
 
@@ -532,7 +532,7 @@ We can now implement our callback function for the map lookup :
 static long dns_lookup(void *map, __u32 *key, void *value,
                        void *context)
 {
-        struct dns_lookup_ctx *ctx = context;
+        struct dns_filter_ctx *ctx = context;
         char *dns_query = (char *)value;
 
         /* Compare query with ctx->query, and set ctx->match to 1 if they are
