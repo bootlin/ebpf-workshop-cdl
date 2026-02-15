@@ -558,7 +558,7 @@ We can now implement our callback function for the map lookup :
 static long dns_lookup(void *map, __u32 *key, void *value,
                        void *context)
 {
-        struct dns_filter_ctx *ctx = context;
+        struct dns_filter_context *ctx = context;
         char *dns_query = (char *)value;
 
         /* Compare query with ctx->query, and set ctx->match to 1 if they are
