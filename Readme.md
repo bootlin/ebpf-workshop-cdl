@@ -106,7 +106,7 @@ can be found [here](https://elixir.bootlin.com/linux/v6.17.8/source/include/uapi
 
 If the function returns `TC_ACT_OK`, it means that we allow the packet to be sent.
 To drop a packet, we simply need to return `TC_ACT_SHOT` instead. There are more
-actions that can be returned, you can see the full list (here)[https://elixir.bootlin.com/linux/v6.17.8/source/include/uapi/linux/pkt_cls.h#L66].
+actions that can be returned, you can see the full list [here](https://elixir.bootlin.com/linux/v6.17.8/source/include/uapi/linux/pkt_cls.h#L66).
 
 For now, we just want to make sure that we are able to compile and load an eBPF
 program and attach it to the TC hook. We however want know that our program is
